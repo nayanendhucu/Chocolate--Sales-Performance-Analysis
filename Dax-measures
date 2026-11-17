@@ -1,0 +1,5 @@
+01_sales_performance.dax – Total boxes, total sales and shipment calculations.
+02_employee_analysis.dax – Beverly Moffett's sales and Bars category analysis.
+03_group_sales.dax – Group 1 combined sales using logical operators.
+04_sales_targets.dax – Sales targets and achievement status.
+05_employee_ranking.dax – RANKX, Top 3 and Others classification.
