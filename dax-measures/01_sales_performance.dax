@@ -1,1 +1,45 @@
-dax-measures/01_sales_performance.dax
+-- ============================================
+-- CHOCOLATE SALES PERFORMANCE ANALYSIS
+-- Section 01: Basic Sales Performance Measures
+-- ============================================
+
+
+-- 1. Total Sales Amount
+-- Calculates the overall sales revenue.
+
+Total Sales Amount =
+SUM('Shipments'[Amount])
+
+
+-- 2. Total Boxes
+-- Calculates the total number of boxes sold.
+
+Total Boxes =
+SUM('Shipments'[Boxes])
+
+
+-- 3. Total Shipments
+-- Counts each unique shipment only once.
+
+Total Shipments =
+DISTINCTCOUNT('Shipments'[ShipmentID])
+
+
+-- 4. Boxes Per Shipment
+-- Calculates the average number of boxes in each shipment.
+
+Boxes Per Shipment =
+DIVIDE(
+    [Total Boxes],COUNT
+    Shipments[ShipmentID]
+)
+
+
+-- 5. Amount Per Shipment
+-- Calculates the average sales amount per shipment.
+
+Amount Per Shipment =
+DIVIDE(
+    [Total Amount],
+    COUNT Shipments[ShipmentID]
+)
