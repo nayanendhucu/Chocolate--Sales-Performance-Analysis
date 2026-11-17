@@ -1,0 +1,31 @@
+-- ============================================
+-- CHOCOLATE SALES PERFORMANCE ANALYSIS
+-- Section 05: Employee Ranking Analysis
+-- ============================================
+
+
+-- 1. Employee Sales Rank
+-- Ranks employees based on their total sales amount.
+-- Highest sales receive Rank 1.
+-- DENSE ensures there are no gaps after tied ranks.
+
+Employee Sales Rank =
+RANKX(
+    ALL(People[Sales_person]),
+    [TOTAL AMOUNT],
+    ,
+    DESC,
+    DENSE
+)
+
+
+-- 2. Top 3 Employee Classification
+-- Classifies the top three ranked employees as Top 3.
+-- All remaining employees are classified as Others.
+
+Top 3 Employee Classification =
+IF(
+    [Employee Sales Rank] <= 3,
+    "Top 3",
+    "Others"
+)
