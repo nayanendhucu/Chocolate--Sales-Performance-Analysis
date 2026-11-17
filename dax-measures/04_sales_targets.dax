@@ -1,0 +1,39 @@
+-- ============================================
+-- CHOCOLATE SALES PERFORMANCE ANALYSIS
+-- Section 04: Sales Target Analysis
+-- ============================================
+
+
+-- 1. Sales Target
+-- Sets the target at ₹20,00,000 per salesperson.
+
+Sales Target =
+2000000
+
+
+-- 2. Target Achievement Status
+-- Compares each salesperson's sales with the target.
+-- Returns Target Achieved or Target Failed.
+
+Target Achievement Status =
+IF(
+    [TOTAL AMOUNT] >= [Sales Target],
+    "Target Achieved",
+    "Target Failed"
+)
+
+
+-- 3. Sales Performance Classification
+-- Classifies sales into Low, Medium and High categories.
+--
+-- Low:    Below ₹10,00,000
+-- Medium: ₹10,00,000 to ₹20,00,000
+-- High:   Above ₹20,00,000
+
+Sales Performance Category =
+SWITCH(
+    TRUE(),
+    [TOTAL AMOUNT] < 1000000, "Low",
+    [TOTAL AMOUNT] <= 2000000, "Medium",
+    "High"
+)
